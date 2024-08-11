@@ -18,6 +18,8 @@ import Teacherlogin from './views/auth/teacherlogin';
 import Varified from './views/auth/Varified';
 import Setnewpassword from './views/auth/Setnewpassword';
 import Forgetpassword from './views/auth/Forgetpassword';
+import TeacherProfile from './views/Teacher/TeacherProfile';
+import Class_Routine from './views/Teacher/Class_Routine';
 
 function App() {
   return (
@@ -37,6 +39,9 @@ function App() {
           <Route path="announcement" element={<Announcement />} />
           <Route path="academic-management" element={<Academic_Management />} />
           <Route path="apply-leave" element={<Apply_For_Leave />} />
+          <Route path="teacher-profile" element={<TeacherProfile />} />
+          <Route path='class-routine' element={<Class_Routine/>}/>
+
         </Route>
         <Route path="/" element={<Teacherlogin />} />
         <Route path="/verified" element={<Varified />} />

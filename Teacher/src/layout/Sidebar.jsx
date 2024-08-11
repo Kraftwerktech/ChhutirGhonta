@@ -14,14 +14,14 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
 
   const menuItems = [
     { path: "/teacher/dashboard", name: "Dashboard", icon: <AiFillDashboard /> },
-    { path: "/teacher/student-info", name: "Student Information", icon: <PiStudentDuotone /> },
+    { path: "student-info", name: "Student Information", icon: <PiStudentDuotone /> },
     { path: "/user/dashboard/task-list", name: "My Class", icon: <HiOutlineUserGroup /> },
     { path: "/user/dashboard/inprogress", name: "Student Directory", icon: <MdOutlinePlayLesson /> },
-    { path: "/user/dashboard/complete", name: "Academic Management", icon: <SiMicrosoftacademic /> },
-    { path: "/user/dashboard/cancel", name: "Student Attendance", icon: <MdCoPresent /> },
-    { path: "/user/dashboard/profile", name: "Student Result", icon: < HiOutlineUserGroup /> },
-    { path: "/user/dashboard/class-routine", name: "Class Routine", icon: <CiCalendar />, isButton: true },
-    { path: "/user/dashboard/settings", name: "Setting", icon: <IoSettingsOutline /> },
+    { path: "academic-management", name: "Academic Management", icon: <SiMicrosoftacademic /> },
+    { path: "student-attendance", name: "Student Attendance", icon: <MdCoPresent /> },
+    { path: "student-result", name: "Student Result", icon: < HiOutlineUserGroup /> },
+    { path: "class-routine", name: "Class Routine", icon: <CiCalendar /> },
+    { path: "setting", name: "Setting", icon: <IoSettingsOutline /> },
   ];
 
   return (
