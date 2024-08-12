@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import { CiLock, CiUser } from "react-icons/ci";
 
 const RightSection = () => {
   return (
-    <div className="col-span-6 lg:col-start-8 lg:col-end-13 p-4 bg-transparent">
-      <div className="bg-white p-6 md:p-10 lg:p-12  rounded-3xl shadow-xl">
-        <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6 text-center">
+    <div className="col-span-6 pl-24 w-[732px] mb-10 h-[746px] lg:col-start-8 lg:col-end-13 p-4 bg-transparent flex justify-center items-center">
+      <div className="bg-white w-[732px] p-8 md:p-10 lg:p-12 rounded-l-[56px] shadow-xl">
+        <h2 className="text-2xl md:text-3xl mt-10 mb-5 font-bold text-center">
           Login
         </h2>
         <LoginForm />
@@ -21,57 +22,42 @@ const LoginForm = () => {
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
   return (
-    <form>
-      <div className="mb-4">
-        <label className="block text-gray-700 mb-2 font-serif">
-        <span className="p-2">
-            <FontAwesomeIcon icon={faUser} className="text-red-400" />
-          </span>
+    <form className="space-y-6 pl-24 pr-24 pb-12">
+      <div className="w-[400px] items-center">
+        <label className="text-gray-700 mb-2 flex items-center">
+          <CiUser className="text-[#BB5042] w-6 h-6 mr-2" />
           User Name
-
         </label>
-        <div className="flex items-center border-2 border-gray-400 rounded-xl mt-1 focus-within:ring-2 focus-within:ring-[#d73166]">
-          <input
-            type="text"
-            className="w-full rounded-xl p-2 focus:outline-none"
-            placeholder="Enter User Name"
-          />
-        </div>
+        <input
+          type="text"
+          className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#d73166]"
+          placeholder="Enter User Name"
+        />
       </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 mb-2 font-serif">
-        <span className="p-2">
-            <FontAwesomeIcon icon={faLock}  className="text-red-400"/>
-          </span>
-            Password
-           </label>
-        <div className="flex items-center border-2 border-gray-400 rounded-xl mt-1 focus-within:ring-2 focus-within:ring-[#d73166]">
-         
-          <input
-            type={showPassword ? "text" : "password"}
-            className="w-full rounded-xl p-2 font-serif focus:outline-none"
-            placeholder="Enter password"
-          />
-          <button
-            type="button"
-            className="p-2 focus:outline-none"
-            onClick={togglePasswordVisibility}
-          >
-            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="  text-zinc-400" />
-          </button>
-        </div>
+      <div className="w-[400px] items-center">
+        <label className="text-gray-700 mb-2 flex items-center">
+          <CiLock className="text-[#BB5042] w-6 h-6 mr-2" />
+          Password
+        </label>
+        <input
+          type={showPassword ? "text" : "password"}
+          className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#d73166]"
+          placeholder="Enter password"
+        />
       </div>
-      <div className="mb-4 mt-2 text-right">
-        <a href="http://localhost:5173/forget-password" className="text-blue-500 hover:underline font-serif">
+      <div className="text-right">
+        <a
+          href="http://localhost:5173/forget-password"
+          className="text-blue-500 pr-3 hover:underline"
+        >
           Forgot Password?
         </a>
       </div>
-      <div className="pt-10">
-      <button className="w-full bg-red-500  text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600 transition duration-200">
-        <Link to='http://localhost:5173/teacher/dashboard'>Login</Link>
-      </button>
+      <div className="pt-3 w-[400px] items-center">
+        <button className="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 focus:outline-none focus:bg-red-600 transition duration-200">
+          <Link to="http://localhost:5173/teacher/dashboard">Login</Link>
+        </button>
       </div>
-      
     </form>
   );
 };

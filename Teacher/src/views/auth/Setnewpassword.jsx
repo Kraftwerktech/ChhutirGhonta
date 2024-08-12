@@ -3,7 +3,7 @@ import logo from '../../assets/Teacher/logo1.png'; // Ensure your logo path is c
 import teacherImage from '../../assets/Teacher/Teacherlogin.png'; // Ensure your image path is correct
 import Login from './Login';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { CiLock } from "react-icons/ci";
 function Setnewpassword() {
     const [isModalOpen, setIsModalOpen] = useState(true);
 
@@ -51,9 +51,9 @@ function Setnewpassword() {
                         </h2>
                         <form>
                             <div className="mb-4">
-                                <label className="block text-gray-700 font-serif mb-1">
+                                <label className=" text-gray-700 flex items-center font-serif mb-1">
                                     <span className="p-2">
-                                        <FontAwesomeIcon icon={faLock} className="text-red-400" />
+                                        < CiLock  className="text-red-400 w-6 h-6" />
                                     </span>
                                     New Password
                                 </label>
@@ -64,9 +64,9 @@ function Setnewpassword() {
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 font-serif mb-1">
+                                <label className=" text-gray-700 flex items-center font-serif mb-1">
                                     <span className="p-2">
-                                        <FontAwesomeIcon icon={faLock} className="text-red-400" />
+                                        < CiLock  className="text-red-400 w-6 h-6" />
                                     </span>
                                     Confirm Password
                                 </label>
