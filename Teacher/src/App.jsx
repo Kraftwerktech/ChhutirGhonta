@@ -20,7 +20,9 @@ import Setnewpassword from './views/auth/Setnewpassword';
 import Forgetpassword from './views/auth/Forgetpassword';
 import TeacherProfile from './views/Teacher/TeacherProfile';
 import Class_Routine from './views/Teacher/Class_Routine';
-
+import Myclass from './views/Teacher/myclass';
+import StudentDirctory from './views/Teacher/StudentDirctory';
+import Resetpassbyprofile from './views/auth/resetpassbyprofile';
 function App() {
   return (
     <BrowserRouter>
@@ -41,7 +43,9 @@ function App() {
           <Route path="apply-leave" element={<Apply_For_Leave />} />
           <Route path="teacher-profile" element={<TeacherProfile />} />
           <Route path='class-routine' element={<Class_Routine/>}/>
-
+          <Route path='my-class' element={<Myclass/>}/>
+          <Route path='student-dir' element={<StudentDirctory/>}/>
+          <Route path='reset-pass-profile' element={<Resetpassbyprofile/>}/>
         </Route>
         <Route path="/" element={<Teacherlogin />} />
         <Route path="/verified" element={<Varified />} />

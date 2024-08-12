@@ -17,14 +17,18 @@ const TeacherProfile = () => {
          <div className="w-[1094px]  flex items-center justify-center bg-gray-50 py-5">
       <div className=" w-[1094px] h-[566px] bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row gap-6">
         {/* Profile Image and Name */}
-        <div className="flex flex-col items-center md:items-start w-full md:w-1/3 bg-red-50 p-4">
-          <img
+        <div className="flex flex-col  items-center md:items-start w-full md:w-1/3 bg-red-50 p-4">
+        <div className='w-[220px] h-[250px]'>
+        <img
             src={teacher} // Replace with your image path
             alt="Teacher"
-            className="w-[190px] h-[224px] items-center  object-cover mb-4"
+            className="w-full h-full items-center rounded-t-lg  object-cover"
           />
-          <h2 className="text-xl font-semibold text-gray-800">Mohammad Ibrahim</h2>
-          <span className="text-sm text-red-600">Assistant Teacher</span>
+          <div className='bg-[#BB5042] p-2 rounded-b-lg  text-center text-white'><h2 className="text-xl font-semibold  text-white">Mohammad Ibrahim</h2>
+          <span className="text-sm">Assistant Teacher</span></div>
+        </div>
+          
+          
         </div>
 
         {/* Profile Information */}

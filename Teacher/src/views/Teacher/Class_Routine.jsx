@@ -62,7 +62,7 @@ const students = [
   {
     id: 6,
     date: '2024-08-17',
-    day: 'Saturday',
+    day: 'Sat',
     first: { subject: 'Bangla', className: 'VI' },
     second: { subject: 'Math', className: 'VII' },
     third: { subject: 'Physics', className: 'XI' },
@@ -73,7 +73,7 @@ const students = [
   {
     id: 7,
     date: '2024-08-18',
-    day: 'Sunday',
+    day: 'Sun',
     first: { subject: 'History', className: 'IX' },
     second: { subject: 'Bangla', className: 'VI' },
     third: { subject: 'Math', className: 'VII' },
@@ -84,7 +84,7 @@ const students = [
   {
     id: 8,
     date: '2024-08-19',
-    day: 'Monday',
+    day: 'Mon',
     first: { subject: 'Bangla', className: 'V' },
     second: { subject: 'Math', className: 'VI' },
     third: { subject: 'English', className: 'VII' },
@@ -95,7 +95,7 @@ const students = [
   {
     id: 9,
     date: '2024-08-20',
-    day: 'Tuesday',
+    day: 'Tue',
     first: { subject: 'Physics', className: 'XI-A' },
     second: { subject: 'Chemistry', className: 'XII-C' },
     third: { subject: 'Bangla', className: 'VI-D' },
@@ -106,7 +106,7 @@ const students = [
   {
     id: 10,
     date: '2024-08-21',
-    day: 'Wednesday',
+    day: 'Wed',
     first: { subject: 'English', className: 'VII-A' },
     second: { subject: 'Math', className: 'VI-C' },
     third: { subject: 'Bangla', className: 'V-A' },

@@ -15,7 +15,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
   const menuItems = [
     { path: "/teacher/dashboard", name: "Dashboard", icon: <AiFillDashboard /> },
     { path: "student-info", name: "Student Information", icon: <PiStudentDuotone /> },
-    { path: "/user/dashboard/task-list", name: "My Class", icon: <HiOutlineUserGroup /> },
+    { path: "my-class", name: "My Class", icon: <HiOutlineUserGroup /> },
     { path: "/user/dashboard/inprogress", name: "Student Directory", icon: <MdOutlinePlayLesson /> },
     { path: "academic-management", name: "Academic Management", icon: <SiMicrosoftacademic /> },
     { path: "student-attendance", name: "Student Attendance", icon: <MdCoPresent /> },
@@ -61,7 +61,8 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                       location.pathname === item.path ? 'bg-[#465049] text-white' : 'bg-[#E4EBE6] hover:bg-[#465049] hover:text-white'
                     }`}
                   >
-                    {item.icon}
+                    <span className="text-[22px]"> {item.icon}</span>
+                   
                     <span className="font-normal">{item.name}</span>
                   </Link>
                 )}

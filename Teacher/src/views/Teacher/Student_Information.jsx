@@ -212,7 +212,9 @@ function StudentInformation() {
                     />
                   </td>
                   <td className="px-4 py-2">{student.studentId}</td>
-                  <td className="px-4 py-2">{student.name}</td>
+                  <td className="px-4 py-2">
+                    <a className='text-[#0318CF] hover:text-[#BB5042]' href='http://localhost:5173/teacher/dashboard/student-dir'>{student.name}</a>
+                   </td>
                   <td className="px-4 py-2">{student.class}</td>
                   <td className="px-4 py-2">{student.section}</td>
                   <td className="px-4 py-2">{student.roll}</td>

@@ -60,6 +60,9 @@ const Header = ({ showSidebar, setShowSidebar }) => {
                   <a href="http://localhost:5173/teacher/dashboard/teacher-profile" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
                     Profile
                   </a>
+                  <a href="http://localhost:5173/teacher/dashboard/reset-pass-profile" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
+                    Reset Password
+                  </a>
                   <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
                     Settings
                   </a>
