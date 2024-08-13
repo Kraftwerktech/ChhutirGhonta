@@ -18,7 +18,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
     { path: "/teacher/dashboard", name: "Dashboard", icon: <AiFillDashboard /> },
     { path: "student-info", name: "Student Information", icon: <PiStudentDuotone /> },
     { path: "my-class", name: "My Class", icon: <HiOutlineUserGroup /> },
-    { path: "/user/dashboard/inprogress", name: "Student Directory", icon: <MdOutlinePlayLesson /> },
+    { path: "student-dir", name: "Student Directory", icon: <MdOutlinePlayLesson /> },
     { path: "academic-management", name: "Academic Management", icon: <SiMicrosoftacademic /> },
     { path: "student-attendance", name: "Student Attendance", icon: <MdCoPresent /> },
     { path: "student-result", name: "Student Result", icon: < HiOutlineUserGroup /> },

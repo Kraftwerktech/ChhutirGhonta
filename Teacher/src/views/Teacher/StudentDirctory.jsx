@@ -15,8 +15,8 @@ import teacher from '../../assets/Teacher/student.jpeg';
 const StudentDirectory = () => {
   return (
     <div className="max-w-[1200px] mx-auto">
-      <h3 className='pl-5 font-semibold text-[25px] mb-6'>Student Information</h3>
-      <div className="flex items-center justify-center bg-gray-50 py-5">
+      <h3 className='pl-5 font-semibold text-[25px] mb-0'>Student Information</h3>
+      <div className="flex items-center justify-center bg-gray-50">
         <div className="w-full max-w-[1200px] bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row gap-6">
           {/* Profile Image and Name */}
           <div className="flex flex-col items-center md:items-start w-full md:w-1/3 p-4">

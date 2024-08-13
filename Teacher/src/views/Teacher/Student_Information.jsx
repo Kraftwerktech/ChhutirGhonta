@@ -95,7 +95,7 @@ const students = [
   },
 ];
 
-const itemsPerPage = 5;
+const itemsPerPage = 10;
 
 function StudentInformation() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -121,10 +121,10 @@ function StudentInformation() {
   );
 
   return (
-    <div className="pl-8 pr-8 pb-8 mt-1">
+    <div className="pl-8 pr-8 pb-6 mt-0">
       <h3 className="text-lg font-semibold mb-6">Student Directory</h3>
       
-      <div className="w-full bg-white mr-4 pb-4 mt-1 shadow-sm rounded-lg">
+      <div className="w-full bg-white mr-4 pb-4 mt-0 shadow-sm rounded-lg">
         <div className="flex flex-wrap gap-6 justify-between">
           {/* First Input */}
           <input 

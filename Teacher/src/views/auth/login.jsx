@@ -54,7 +54,7 @@ const LoginForm = () => {
         </a>
       </div>
       <div className="pt-3 w-[400px] items-center">
-        <button className="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 focus:outline-none focus:bg-red-600 transition duration-200">
+        <button className="w-full bg-[#BB5042] text-white py-3 rounded-lg hover:bg-red-600 focus:outline-none focus:bg-red-600 transition duration-200">
           <Link to="http://localhost:5173/teacher/dashboard">Login</Link>
         </button>
       </div>

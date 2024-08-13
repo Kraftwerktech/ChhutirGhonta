@@ -1,42 +1,115 @@
 import React, { useState } from 'react';
-import { FaList, FaBell, FaCaretDown } from 'react-icons/fa';
-import { IoMdNotificationsOutline } from "react-icons/io";
+import { FaList, FaCaretDown } from 'react-icons/fa';
+import { IoMdNotificationsOutline } from 'react-icons/io';
+import teacher from '../assets/Teacher/teacher.jpg'; // Replace with appropriate icon or image for notifications
+import { RiDeleteBin6Line } from "react-icons/ri";
 
-import teacher from '../assets/Teacher/teacher.jpg';
+import { Link } from 'react-router-dom';
 
 const Header = ({ showSidebar, setShowSidebar }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [notifications, setNotifications] = useState([
+    { id: 1, message: 'New message from admin', timestamp: '2 minutes ago', icon: teacher },
+    { id: 2, message: 'Assignment deadline approaching', timestamp: '1 hour ago', icon: teacher },
+    { id: 3, message: 'New class schedule available', timestamp: 'Yesterday', icon: teacher },
+    { id: 4, message: 'Meeting at 3 PM', timestamp: 'Yesterday', icon: teacher },
+    // Add more notifications as needed
+  ]);
+  const [unreadCount, setUnreadCount] = useState(notifications.length);
+  const [filter, setFilter] = useState('all');
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const toggleDropdown = () => setShowDropdown(!showDropdown);
+  const toggleNotifications = () => setShowNotifications(!showNotifications);
+
+  const handleDeleteNotification = (id) => {
+    setNotifications(notifications.filter(notification => notification.id !== id));
+    setUnreadCount(notifications.length - 1);
   };
 
+  const filteredNotifications = filter === 'unread'
+    ? notifications.slice(0, unreadCount) // Assuming unread notifications are at the top
+    : notifications;
+
   return (
-    <div className='fixed mt-0 w-full py-5 px-2 lg:px-7 z-40'>
+    <div className='fixed w-full'>
       <div className='ml-0 lg:ml-[260px] rounded-md h-[65px] flex justify-between items-center bg-[#F6F9F7] text-[#f2f4f6] px-5 transition-all'>
-        <div 
-          onClick={() => setShowSidebar(!showSidebar)} 
+        <div
+          onClick={() => setShowSidebar(!showSidebar)}
           className='w-[35px] flex lg:hidden h-[35px] rounded-sm bg-indigo-500 shadow-lg hover:shadow-indigo-500/50 justify-center items-center cursor-pointer'
         >
-          <span><FaList /></span>
+          <FaList className='text-white' />
         </div>
 
         <div className='hidden md:block'>
-          <input 
-            className='px-3 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-[#d0d2d6] focus:border-indigo-500 overflow-hidden' 
-            type="text" 
-            name='search' 
-            placeholder='search' 
+          <input
+            className='px-3 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-[#d0d2d6] focus:border-indigo-500 overflow-hidden'
+            type="text"
+            name='search'
+            placeholder='Search'
           />
         </div>
 
         <div className='flex justify-center items-center gap-8 relative'>
           {/* Notification Icon */}
           <div className='relative'>
-            <IoMdNotificationsOutline className='text-xl cursor-pointer text-[#BB5042] w-7 h-7' />
-            <span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex justify-center items-center'>
-              3
-            </span>
+            <IoMdNotificationsOutline 
+              className='text-xl cursor-pointer text-[#BB5042] w-7 h-7' 
+              onClick={toggleNotifications} 
+            />
+            {unreadCount > 0 && (
+              <span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex justify-center items-center'>
+                {unreadCount}
+              </span>
+            )}
+            {/* Notifications Dropdown */}
+            {showNotifications && (
+              <div className='absolute top-full right-0 mt-2 w-80 bg-white shadow-lg rounded-md py-2 z-10'>
+                <div className='px-4 py-2 text-[20px] border-b text-gray-700 font-semibold'>Notifications</div>
+                <div className='flex gap-4 w-full h-[48px] mt-2 mb-2'>
+                  <button 
+                    className={`px-4 py-2 rounded-md ${filter === 'all' ? 'bg-[#616158] text-white' : 'text-gray-600'} hover:bg-[#616158] hover:text-white`}
+                    onClick={() => setFilter('all')}
+                  >
+                    All
+                  </button>
+                  <button 
+                    className={`px-4 py-2 rounded-md ${filter === 'unread' ? 'bg-[#616158] text-white' : 'text-gray-600'} hover:bg-[#616158] hover:text-white`}
+                    onClick={() => setFilter('unread')}
+                  >
+                    Unread
+                  </button>
+                </div>
+                <div className='max-h-60 overflow-y-auto'>
+                  {filteredNotifications.length > 0 ? (
+                    filteredNotifications.map((notification, index) => (
+                      <div 
+                        key={notification.id} 
+                        className={`px-4 py-2 border-b last:border-b-0 flex justify-between items-center ${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}
+                      >
+                        <div className='flex items-center'>
+                          <img 
+                            src={notification.icon} 
+                            alt="icon" 
+                            className='w-8 h-8 rounded-full mr-3' 
+                          />
+                          <div>
+                            <p className='text-gray-800'>{notification.message}</p>
+                            <span className='text-gray-500 text-sm'>{notification.timestamp}</span>
+                          </div>
+                        </div>
+                        <RiDeleteBin6Line 
+                          className='text-red-500 w-5 h-5 cursor-pointer ml-2'
+                          onClick={() => handleDeleteNotification(notification.id)}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div className='px-4 py-2 text-gray-500'>No notifications</div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className='flex justify-center items-center'>
@@ -46,23 +119,23 @@ const Header = ({ showSidebar, setShowSidebar }) => {
                 <span className='text-[14px] text-gray-400 w-full font-normal'>Teacher</span>
               </div>
               <div className='flex items-center cursor-pointer' onClick={toggleDropdown}>
-                <img 
+                <img
                   className='w-[45px] h-[45px] rounded-full overflow-hidden border-2 border-gray-300'
-                  src={teacher} 
-                  alt="profile" 
+                  src={teacher}
+                  alt="profile"
                 />
                 <FaCaretDown className='text-xl text-[#000] ml-2' />
               </div>
 
               {/* Dropdown Menu */}
               {showDropdown && (
-                <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2'>
-                  <a href="http://localhost:5173/teacher/dashboard/teacher-profile" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
+                <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-10'>
+                  <Link to="/teacher/dashboard/teacher-profile" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
                     Profile
-                  </a>
-                  <a href="http://localhost:5173/teacher/dashboard/reset-pass-profile" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
+                  </Link>
+                  <Link to="/teacher/dashboard/reset-pass-profile" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
                     Reset Password
-                  </a>
+                  </Link>
                   <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
                     Settings
                   </a>

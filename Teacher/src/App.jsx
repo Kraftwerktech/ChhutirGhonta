@@ -23,6 +23,9 @@ import Class_Routine from './views/Teacher/Class_Routine';
 import Myclass from './views/Teacher/myclass';
 import StudentDirctory from './views/Teacher/StudentDirctory';
 import Resetpassbyprofile from './views/auth/resetpassbyprofile';
+import VerifyIdentyByProfile from './views/auth/Varifyidentiybyprofile';
+import VarifyOTPbyprofile from './views/auth/varifyOTPbyprofile';
+import Notificationsall from './views/Teacher/Notificationall';
 function App() {
   return (
     <BrowserRouter>
@@ -46,6 +49,9 @@ function App() {
           <Route path='my-class' element={<Myclass/>}/>
           <Route path='student-dir' element={<StudentDirctory/>}/>
           <Route path='reset-pass-profile' element={<Resetpassbyprofile/>}/>
+          <Route path='verifyidentybyprofile-pass-profile' element={<VerifyIdentyByProfile/>}/>
+          <Route path='verifyotpbyprofile-pass-profile' element={<VarifyOTPbyprofile/>}/>
+          <Route path='notifications' element={<Notificationsall/>}/>
         </Route>
         <Route path="/" element={<Teacherlogin />} />
         <Route path="/verified" element={<Varified />} />
