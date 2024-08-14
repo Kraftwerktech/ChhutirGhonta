@@ -3,7 +3,6 @@ import { FaList, FaCaretDown } from 'react-icons/fa';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import teacher from '../assets/Teacher/teacher.jpg'; // Replace with appropriate icon or image for notifications
 import { RiDeleteBin6Line } from "react-icons/ri";
-
 import { Link } from 'react-router-dom';
 
 const Header = ({ showSidebar, setShowSidebar }) => {
@@ -14,13 +13,19 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     { id: 2, message: 'Assignment deadline approaching', timestamp: '1 hour ago', icon: teacher },
     { id: 3, message: 'New class schedule available', timestamp: 'Yesterday', icon: teacher },
     { id: 4, message: 'Meeting at 3 PM', timestamp: 'Yesterday', icon: teacher },
-    // Add more notifications as needed
   ]);
   const [unreadCount, setUnreadCount] = useState(notifications.length);
   const [filter, setFilter] = useState('all');
 
-  const toggleDropdown = () => setShowDropdown(!showDropdown);
-  const toggleNotifications = () => setShowNotifications(!showNotifications);
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+    if (showNotifications) setShowNotifications(false); // Close notifications if dropdown is opened
+  };
+  
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+    if (showDropdown) setShowDropdown(false); // Close profile dropdown if notifications are opened
+  };
 
   const handleDeleteNotification = (id) => {
     setNotifications(notifications.filter(notification => notification.id !== id));
@@ -28,11 +33,11 @@ const Header = ({ showSidebar, setShowSidebar }) => {
   };
 
   const filteredNotifications = filter === 'unread'
-    ? notifications.slice(0, unreadCount) // Assuming unread notifications are at the top
+    ? notifications.slice(0, unreadCount)
     : notifications;
 
   return (
-    <div className='fixed w-full'>
+    <div className='fixed w-full z-10'> {/* Ensures header is above all content */}
       <div className='ml-0 lg:ml-[260px] rounded-md h-[65px] flex justify-between items-center bg-[#F6F9F7] text-[#f2f4f6] px-5 transition-all'>
         <div
           onClick={() => setShowSidebar(!showSidebar)}
@@ -52,7 +57,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
 
         <div className='flex justify-center items-center gap-8 relative'>
           {/* Notification Icon */}
-          <div className='relative'>
+          <div className='relative z-20'> {/* Ensures notifications dropdown is above profile dropdown */}
             <IoMdNotificationsOutline 
               className='text-xl cursor-pointer text-[#BB5042] w-7 h-7' 
               onClick={toggleNotifications} 
@@ -64,7 +69,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
             )}
             {/* Notifications Dropdown */}
             {showNotifications && (
-              <div className='absolute top-full right-0 mt-2 w-80 bg-white shadow-lg rounded-md py-2 z-10'>
+              <div className='absolute top-full right-0 mt-2 w-80 bg-white shadow-lg rounded-md py-2 z-50'>
                 <div className='px-4 py-2 text-[20px] border-b text-gray-700 font-semibold'>Notifications</div>
                 <div className='flex gap-4 w-full h-[48px] mt-2 mb-2'>
                   <button 
@@ -113,23 +118,23 @@ const Header = ({ showSidebar, setShowSidebar }) => {
           </div>
 
           <div className='flex justify-center items-center'>
-            <div className='flex justify-center items-center gap-3 relative'>
+            <div className='flex justify-center items-center gap-3 relative z-10'> {/* Ensures profile dropdown is below notifications */}
               <div className='flex justify-center items-center flex-col text-end'>
                 <h2 className='text-sm text-[#000] font-bold'>Md Ibrahim</h2>
                 <span className='text-[14px] text-gray-400 w-full font-normal'>Teacher</span>
               </div>
               <div className='flex items-center cursor-pointer' onClick={toggleDropdown}>
                 <img
-                  className='w-[45px] h-[45px] rounded-full overflow-hidden border-2 border-gray-300'
+                  className='w-[45px] h-[45px] rounded-full overflow-hidden border-[3px] border-[#BB5042]'
                   src={teacher}
                   alt="profile"
                 />
-                <FaCaretDown className='text-xl text-[#000] ml-2' />
+                <FaCaretDown className='text-xl text-[#BB5042] ml-2' />
               </div>
 
               {/* Dropdown Menu */}
               {showDropdown && (
-                <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-10'>
+                <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-50'>
                   <Link to="/teacher/dashboard/teacher-profile" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>
                     Profile
                   </Link>

@@ -1,28 +1,60 @@
-import React from 'react';
-import logo from '../../assets/Teacher/logo1.png'; // Ensure your logo path is correct
-import teacherImage from '../../assets/Teacher/fofgetpass.svg'; // Ensure your image path is correct
-import VarifiedCard from './veryficard';
+import React, { useState } from 'react';
+import logo from '../../assets/Teacher/logo1.png';
+import teacherImage from '../../assets/Teacher/fofgetpass.svg';
+import { Link } from 'react-router-dom';
 
-function Varified() {
+function VerifyOTPPage() {
+    const [otp, setOtp] = useState(["", "", "", ""]);
+
+    const handleChange = (element, index) => {
+        if (isNaN(element.value)) return;
+        setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
+
+        // Move to next input field
+        if (element.nextSibling) {
+            element.nextSibling.focus();
+        }
+    };
+
     return (
-        <div className="min-h-screen bg-cover bg-[#A7BEAE]">
-            <div className="absolute top-2 pl-14 pt-4">
-                <div className='flex'>
-                    <img src={logo} alt="Logo" className="h-14" />
-                </div>
+        <div className="fixed inset-0 bg-cover bg-[#A7BEAE]">
+            <div className="absolute top-2 left-4 md:left-10 lg:left-14 pt-4">
+                <img src={logo} alt="Logo" className="h-8 md:h-10" />
             </div>
-            <div className="container mx-auto pl-10 pt-[100px]">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-[50px] items-center">
-                    <div className="col-span-12 lg:col-span-6 pl-10">
-                        <p className="font-semibold font-serif text-[37px] text-white pr-32 text-center mb-4 pl-32">
-                        Don't worry, we'll help you to reset it.
+            <div className="container mx-auto mt-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] lg:gap-[50px] items-center">
+                    <div className="flex flex-col justify-center items-center text-center">
+                        <h1 className="text-[38px] font-bold text-white mt-[83px]">
+                            Verify Your Identity
+                        </h1>
+                        <p className="text-[22px] text-white mt-4">
+                            Please enter the 4-digit OTP sent to your email or mobile number.
                         </p>
-                        <div className="max-w-[60%] mx-auto gap-4">
-                            <img src={teacherImage} alt="Teacher Illustration" className="h-full w-full" />
-                        </div>
+                        <img src={teacherImage} alt="Teacher Illustration" className="w-[438px] h-[438px] mt-8" />
                     </div>
-                    <div className="col-span-8 lg:col-span-5">
-                        <VarifiedCard/>
+                    <div className="bg-white rounded-l-[56px] shadow-lg ml-12 p-10 flex flex-col justify-center items-center">
+                        <div className='w-[446px] h-[115px] items-center justify-center text-center'>
+                            <h2 className="text-[24px] text-gray-700 mb-6 mt-10 font-bold">Enter OTP</h2>
+                            <span>Please enter the 4-digit OTP code you received.</span>
+                        </div>
+                        <div className="flex space-x-4 mt-8 mb-4">
+                            {otp.map((data, index) => (
+                                <input
+                                    key={index}
+                                    type="text"
+                                    maxLength="1"
+                                    className="w-12 h-12 text-center border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A7BEAE] text-[24px]"
+                                    value={data}
+                                    onChange={e => handleChange(e.target, index)}
+                                    onFocus={e => e.target.select()}
+                                />
+                            ))}
+                        </div>
+                        <Link to='/setnewpass'>
+                            <button className="w-[446px] mt-10 mb-12 p-3 bg-[#BB5042] text-white rounded-lg">
+                                Verify OTP
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -30,4 +62,4 @@ function Varified() {
     );
 }
 
-export default Varified;
+export default VerifyOTPPage;

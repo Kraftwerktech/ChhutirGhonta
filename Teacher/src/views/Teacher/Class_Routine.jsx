@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { CiCalendar } from "react-icons/ci";
+import { Link } from 'react-router-dom';
 
 // Dummy Data for 10 Days
 const students = [
@@ -152,7 +153,10 @@ function StudentInformation() {
             <thead className="bg-[#E8E8E8]">
               <tr className="text-left text-sm text-[#465049]">
                 <th className="px-4 py-2">
+                  <Link to="http://localhost:5173/teacher/dashboard/routineCalender" className='w-16 h-16'>
                   <CiCalendar className="w-16 h-16 text-[#BB5042]" />
+                  </Link>
+                 
                 </th>
                 <th className="px-4 py-2">
                   <span className="text-[25px]">1st</span>

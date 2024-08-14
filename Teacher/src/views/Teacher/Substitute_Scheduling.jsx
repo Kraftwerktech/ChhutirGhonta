@@ -123,12 +123,7 @@ function SubstituteScheduling() {
             <td className="px-4 py-2">{(currentPage - 1) * itemsPerPage + index + 1}</td>
             <td className="px-4 py-2">{student.date}</td>
             <td className="px-4 py-2">
-              <a
-                className="text-[#0318CF] hover:text-[#BB5042]"
-                href="http://localhost:5173/teacher/dashboard/student-dir"
-              >
-                {student.name}
-              </a>
+              <span> {student.name}</span> 
             </td>
             <td className="px-4 py-2">
               <button className="w-[76.67px] h-[60px] bg-transparent flex items-center justify-center">
@@ -137,7 +132,7 @@ function SubstituteScheduling() {
               </button>
             </td>
             <td className="px-4 py-2">
-              <button className="w-[76.67px] h-[60px] bg-[#F8EEEC] bg-transparent flex items-center justify-center">
+              <button className="w-[76.67px] h-[60px] bg-[#F8EEEC]  flex items-center justify-center">
                 {student.second}
                 <RxCrossCircled className="text-[#BB5042] h-6 w-6" />
               </button>
@@ -149,13 +144,13 @@ function SubstituteScheduling() {
               </button>
             </td>
             <td className="px-4 py-2">
-              <button className="w-[76.67px] h-[60px] bg-[#F8EEEC] bg-transparent flex items-center justify-center">
+              <button className="w-[76.67px] bg-[#F8EEEC] h-[60px]   flex items-center justify-center">
                 {student.fore}
                 <RxCrossCircled className="text-[#BB5042] h-6 w-6" />
               </button>
             </td>
             <td className="px-4 py-2">
-              <button className="w-[76.67px] h-[60px] bg-transparent flex items-center justify-center">
+              <button className="w-[76.67px] h-[60px] bg-transparent  flex items-center justify-center">
                 {student.five}
                 <IoIosCheckmarkCircleOutline className="text-[#08A647] h-6 w-6" />
               </button>

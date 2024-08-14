@@ -26,6 +26,7 @@ import Resetpassbyprofile from './views/auth/resetpassbyprofile';
 import VerifyIdentyByProfile from './views/auth/Varifyidentiybyprofile';
 import VarifyOTPbyprofile from './views/auth/varifyOTPbyprofile';
 import Notificationsall from './views/Teacher/Notificationall';
+import RoutineCalanderScreen from './views/Teacher/RoutineCalanderScreen';
 function App() {
   return (
     <BrowserRouter>
@@ -52,6 +53,8 @@ function App() {
           <Route path='verifyidentybyprofile-pass-profile' element={<VerifyIdentyByProfile/>}/>
           <Route path='verifyotpbyprofile-pass-profile' element={<VarifyOTPbyprofile/>}/>
           <Route path='notifications' element={<Notificationsall/>}/>
+          <Route path='routineCalender' element={<RoutineCalanderScreen/>}/>
+
         </Route>
         <Route path="/" element={<Teacherlogin />} />
         <Route path="/verified" element={<Varified />} />

@@ -190,7 +190,7 @@ function StudentInformation() {
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
             <thead className="bg-[#E8E8E8]">
-              <tr className="text-left text-sm uppercase text-[#465049]">
+              <tr className="text-left text-sm  text-[#465049]">
                 <th className="px-4 py-2">SL</th>
                 <th className="px-4 py-2">Picture</th>
                 <th className="px-4 py-2">Student ID</th>
