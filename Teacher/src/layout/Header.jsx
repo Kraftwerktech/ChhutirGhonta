@@ -147,19 +147,24 @@ const Header = ({ showSidebar, setShowSidebar }) => {
 
           <div className='flex justify-center items-center'>
             <div className='flex justify-center items-center gap-3 relative z-10' ref={profileRef}> {/* Ensures profile dropdown is below notifications */}
-              <div className='flex justify-center items-center flex-col text-end'>
-                <h2 className='text-sm text-[#000] font-bold'>Md Ibrahim</h2>
-                <span className='text-[14px] text-gray-400 w-full font-normal'>Teacher</span>
-              </div>
-              <div className='flex items-center cursor-pointer' onClick={toggleDropdown}>
+            <div className='flex items-center cursor-pointer' onClick={toggleDropdown}>
                 <img
                   className='w-[45px] h-[45px] rounded-full overflow-hidden border-[3px] border-[#BB5042]'
                   src={teacher}
                   alt="profile"
                 />
-                <FaCaretDown className='text-xl text-[#BB5042] ml-2' />
+                
               </div>
-
+              <div className='flex justify-center items-center flex-col pr-8'>
+             
+                <h2 onClick={toggleDropdown} className='text-sm text-[#000] font-bold flex'>
+                  <span>Mohammad Ibrahim</span>
+                <FaCaretDown className='text-xl text-[#BB5042] ml-2' />
+                </h2>
+                
+                <span className='text-[14px] text-gray-400 w-full font-normal'>Teacher</span>
+              </div>
+              
               {/* Dropdown Menu */}
               {showDropdown && (
                 <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-50'>
