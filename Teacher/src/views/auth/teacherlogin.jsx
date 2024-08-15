@@ -6,8 +6,8 @@ import { CiLock, CiUser } from "react-icons/ci";
 function ForgetPasswordPage() {
     return (
         <div className=" min-h-screen inset-0 bg-cover bg-[#A7BEAE]">
-            <div className=" absolute top-2 left-4 md:left-10 mt-3 lg:left-14 pt-3">
-                <img src={logo} alt="Logo" className=" md:h-10" />
+            <div className=" absolute top-2 left-4 md:left-10 mt-3 lg:left-14 pt-7">
+                <img src={logo} alt="Logo" className=" h-16 w-full" />
             </div>
             <div className=" justify-center mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] lg:gap-[50px] items-center">
@@ -24,14 +24,14 @@ function ForgetPasswordPage() {
                         <img src={teacherImage} alt="Teacher Illustration" className="w-[523px] h-[464px] mt-2" />
                     </div>
 
-                    <div className="bg-white rounded-l-[56px] gap-4  items-center shadow-lg ml-[60px] mt-16 p-28 flex flex-col justify-center ">
+                    <div className="bg-white rounded-l-[56px] gap-4  items-center shadow-lg ml-[60px] mt-16 p-20 flex flex-col justify-center ">
                         <div className='w-[600px] h-[115px] items-center justify-center text-center'>
                             <h2 className="text-[39px] text-gray-700 mb-6 mt-5 font-bold">Login</h2>
                         </div>
                         <div>
                             <label className="text-gray-700 text-[16px] mb-2 flex items-center">
                                 <CiUser className="text-[#BB5042]  w-6 h-6 mr-2" />
-                                User Name
+                                Username
                             </label>
                             <input
                                 type="email"
@@ -54,10 +54,10 @@ function ForgetPasswordPage() {
                         <Link to='/forget-password' className="text-[#BB5042] justify-end items-end ml-[350px] mt-2">
                             Forgot Password?
                         </Link>
-                        <Link to='/teacher/dashboard'>
-                            <button className="w-[480px] mt-10 h-[60px] mb-12 p-3 bg-[#BB5042] text-[20px] text-white rounded-lg">
+                        <Link to='/teacher/dashboard' className='w-[480px] mt-10 h-[60px] mb-12 p-3 bg-[#BB5042] text-[20px] text-white text-center rounded-lg'>
+                            
                                 Login
-                            </button>
+                           
                         </Link>
                     </div>
                 </div>
