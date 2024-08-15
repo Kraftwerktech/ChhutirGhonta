@@ -29,7 +29,7 @@ function ForgetPasswordPage() {
                         <input
                             type="email"
                             placeholder="Enter your email or Mobile number"
-                            className="w-[446px] mt-24 p-3 border border-gray-300 rounded-lg mb-4"
+                            className="w-[446px] mt-20 p-3  focus:border-[#BB5042] focus:outline-none  border border-gray-300 rounded-lg mb-4"
                         />
                         <Link to='/verified'>
                         <button className="w-[446px] mt-10 mb-12 p-3 bg-[#BB5042] text-white rounded-lg">

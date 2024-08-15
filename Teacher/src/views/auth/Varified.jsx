@@ -43,7 +43,7 @@ function VerifyOTPPage() {
                                     key={index}
                                     type="text"
                                     maxLength="1"
-                                    className="w-12 h-12 text-center border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A7BEAE] text-[24px]"
+                                    className="w-12 h-12 text-center border-[1px]  rounded-lg focus:border-[#BB5042] focus:outline-none text-[24px]"
                                     value={data}
                                     onChange={e => handleChange(e.target, index)}
                                     onFocus={e => e.target.select()}

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaList, FaCaretDown } from 'react-icons/fa';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import teacher from '../assets/Teacher/teacher.jpg'; // Replace with appropriate icon or image for notifications
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = ({ showSidebar, setShowSidebar }) => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -17,11 +17,39 @@ const Header = ({ showSidebar, setShowSidebar }) => {
   const [unreadCount, setUnreadCount] = useState(notifications.length);
   const [filter, setFilter] = useState('all');
 
+  const notificationRef = useRef(null);
+  const profileRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Hide dropdowns when navigating to a new page
+    setShowDropdown(false);
+    setShowNotifications(false);
+  }, [location]);
+
+  useEffect(() => {
+    // Event listener to handle clicks outside of the dropdowns
+    const handleClickOutside = (event) => {
+      if (
+        notificationRef.current && !notificationRef.current.contains(event.target) &&
+        profileRef.current && !profileRef.current.contains(event.target)
+      ) {
+        setShowNotifications(false);
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
     if (showNotifications) setShowNotifications(false); // Close notifications if dropdown is opened
   };
-  
+
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
     if (showDropdown) setShowDropdown(false); // Close profile dropdown if notifications are opened
@@ -57,9 +85,9 @@ const Header = ({ showSidebar, setShowSidebar }) => {
 
         <div className='flex justify-center items-center gap-8 relative'>
           {/* Notification Icon */}
-          <div className='relative z-20'> {/* Ensures notifications dropdown is above profile dropdown */}
+          <div className='relative z-20' ref={notificationRef}> {/* Ensures notifications dropdown is above profile dropdown */}
             <IoMdNotificationsOutline 
-              className='text-xl cursor-pointer text-[#BB5042] w-7 h-7' 
+              className={`text-xl cursor-pointer w-7 h-7 ${showNotifications ? 'text-blue-500' : 'text-[#BB5042]'}`}
               onClick={toggleNotifications} 
             />
             {unreadCount > 0 && (
@@ -69,7 +97,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
             )}
             {/* Notifications Dropdown */}
             {showNotifications && (
-              <div className='absolute top-full right-0 mt-2 w-80 bg-white shadow-lg rounded-md py-2 z-50'>
+              <div className='absolute top-full right-0 mt-2 w-96 bg-white shadow-lg rounded-md py-2 z-50'>
                 <div className='px-4 py-2 text-[20px] border-b text-gray-700 font-semibold'>Notifications</div>
                 <div className='flex gap-4 w-full h-[48px] mt-2 mb-2'>
                   <button 
@@ -118,7 +146,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
           </div>
 
           <div className='flex justify-center items-center'>
-            <div className='flex justify-center items-center gap-3 relative z-10'> {/* Ensures profile dropdown is below notifications */}
+            <div className='flex justify-center items-center gap-3 relative z-10' ref={profileRef}> {/* Ensures profile dropdown is below notifications */}
               <div className='flex justify-center items-center flex-col text-end'>
                 <h2 className='text-sm text-[#000] font-bold'>Md Ibrahim</h2>
                 <span className='text-[14px] text-gray-400 w-full font-normal'>Teacher</span>

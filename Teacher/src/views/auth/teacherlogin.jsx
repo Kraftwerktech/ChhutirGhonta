@@ -25,28 +25,28 @@ function ForgetPasswordPage() {
                             <h2 className="text-[24px] text-gray-700 mb-6 mt-10 font-bold">Login</h2>
                         </div>
                         <div>
-                        <label className="text-gray-700 mb-2 flex items-center">
-          <CiUser className="text-[#BB5042] w-6 h-6 mr-2" />
-          User Name
-        </label>
-                        <input
-                            type="email"
-                            placeholder="Enter Username"
-                            className="w-[446px] mt-1 p-3 border border-gray-300 rounded-lg mb-4"
-                        />
+                            <label className="text-gray-700 mb-2 flex items-center">
+                                <CiUser className="text-[#BB5042] w-6 h-6 mr-2" />
+                                User Name
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="Enter Username"
+                                className="w-[446px] mt-1 p-3  focus:border-[#BB5042] focus:outline-none  border border-gray-300 rounded-lg mb-4"
+                            />
                         </div>
                         <div>
-                        <label className="text-gray-700 mb-2 flex items-center">
-          <CiLock className="text-[#BB5042] w-6 h-6 mr-2" />
-          Password
-        </label>
-                        <input
-                            type="password"
-                            placeholder="Enter Password"
-                            className="w-[446px] mt-1 p-3 border border-gray-300 rounded-lg mb-4"
-                        />
+                            <label className="text-gray-700 mb-2 flex items-center">
+                                <CiLock className="text-[#BB5042] w-6 h-6 mr-2" />
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Enter Password"
+                                className="w-[446px] mt-1 p-3  focus:border-[#BB5042] focus:outline-none  border border-gray-300 rounded-lg mb-4"
+                            />
                         </div>
-                        
+
                         <Link to='/forget-password' className="text-[#BB5042] justify-end items-end ml-80 mt-2">
                             Forget Password?
                         </Link>
