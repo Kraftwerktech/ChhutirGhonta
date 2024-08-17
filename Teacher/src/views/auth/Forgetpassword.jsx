@@ -24,20 +24,20 @@ function Teacherlogin() {
                         <img src={teacherImage} alt="Teacher Illustration" className="w-[523px] h-[464px] mt-6" />
                     </div>
 
-                    <div className="bg-white rounded-l-[56px] gap-4  items-center shadow-lg ml-[60px] mt-20 p-20 flex flex-col justify-center ">
+                    <div className="bg-white rounded-l-[56px] gap-4  items-center shadow-lg ml-[60px] mt-[100px] p-20 flex flex-col justify-center ">
                         <div className='w-[446px] h-[115px] items-center mb-10 justify-center text-center'>
-                            <h2 className="text-[39px] text-gray-700 mb-[24px] mt-20 font-bold">Verify Your Identity</h2>
+                            <h2 className="text-[39px] text-gray-700 mb-6 mt-20 font-bold">Verify Your Identity</h2>
                             <span >Please enter the email address or mobile number associated with your account to receive OTP.</span>
                         </div>
                         
-                        <div className=' mt-[72px] mb-6'>
+                        <div className=' mt-[80px] mb-6'>
                             <label className="text-gray-700 text-[16px] mb-2 flex items-center">
                                 Email or Mobile Number
                             </label>
                             <input
                                 type="password"
                                 placeholder="Enter Email or Mobile Number"
-                                className="w-[480px] mt-1 p-3  focus:border-[#BB5042] focus:outline-none  border border-gray-300 rounded-lg mb-4"
+                                className="w-[480px] mt-2 p-3  focus:border-[#BB5042] focus:outline-none  border border-gray-300 rounded-lg mb-4"
                             />
                         </div>
 

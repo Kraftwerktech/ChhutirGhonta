@@ -47,7 +47,7 @@ function Teacherlogin() {
                                     key={index}
                                     type="text"
                                     maxLength="1"
-                                    className="w-12 h-12 text-center border-[1px]  rounded-lg focus:border-[#BB5042] focus:outline-none text-[24px]"
+                                    className=" w-20 h-20 text-center border-[1px] border-[#B6B6B6] rounded-lg focus:border-[#BB5042] focus:outline-none text-[24px]"
                                     value={data}
                                     onChange={e => handleChange(e.target, index)}
                                     onFocus={e => e.target.select()}
@@ -57,7 +57,7 @@ function Teacherlogin() {
 
 
 
-                        <Link to='/verified' className='w-[480px] mt-10 h-[60px] mb-[97px] p-3 bg-[#BB5042] text-[20px] text-white text-center rounded-lg'>
+                        <Link to='/setnewpass' className='w-[480px] mt-10 h-[60px] mb-[97px] p-3 bg-[#BB5042] text-[20px] text-white text-center rounded-lg'>
 
                             Continue
 
