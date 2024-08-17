@@ -85,7 +85,7 @@ const students = [
   {
     id: 7,
     date: '2024-08-18',
-    day: 'Fri',
+    day: 'Fri ',
     schedule: [
       { subject: 'Bangla', className: 'VI-A' },
       { subject: 'English', className: 'VII-C' },
