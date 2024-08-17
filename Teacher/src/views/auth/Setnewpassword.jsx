@@ -16,7 +16,7 @@ function Teacherlogin() {
                             <h1 className="text-[55px] font-bold text-white mt-[120px]">
                             Password Recovery
                             </h1>
-                            <p className=" text-[40px] font-extralight text-slate-200  mt-4">
+                            <p className=" text-[40px] font-extralight text-slate-200 mb-4  mt-2">
                             Create a new password to <br/> recover your account
                             </p>
                         </div>

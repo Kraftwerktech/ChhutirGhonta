@@ -6,7 +6,7 @@ const students = [
   {
     id: 1,
     picture: 'https://randomuser.me/api/portraits/men/32.jpg',
-    studentId: 'S101',
+    studentId: '37384587228',
     name: 'John Doe',
     class: 'IX',
     section: 'A',
@@ -15,7 +15,7 @@ const students = [
   {
     id: 2,
     picture: 'https://randomuser.me/api/portraits/women/44.jpg',
-    studentId: 'S102',
+    studentId: '37384587229',
     name: 'Jane Smith',
     class: 'IX',
     section: 'A',
@@ -24,7 +24,7 @@ const students = [
   {
     id: 3,
     picture: 'https://randomuser.me/api/portraits/men/85.jpg',
-    studentId: 'S103',
+    studentId: '37384587230',
     name: 'Sam Johnson',
     class: 'IX',
     section: 'B',
@@ -33,7 +33,7 @@ const students = [
   {
     id: 4,
     picture: 'https://randomuser.me/api/portraits/women/65.jpg',
-    studentId: 'S104',
+    studentId: '37384587231',
     name: 'Emily Davis',
     class: 'IX',
     section: 'C',
@@ -41,61 +41,61 @@ const students = [
   },
   {
     id: 5,
-    picture: 'https://randomuser.me/api/portraits/women/65.jpg',
-    studentId: 'S104',
-    name: 'Emily Davis',
+    picture: 'https://randomuser.me/api/portraits/men/76.jpg',
+    studentId: '37384587232',
+    name: 'Michael Brown',
     class: 'IX',
-    section: 'C',
-    roll: '15'
+    section: 'A',
+    roll: '16'
   },
   {
     id: 6,
-    picture: 'https://randomuser.me/api/portraits/women/65.jpg',
-    studentId: 'S104',
-    name: 'Emily Davis',
+    picture: 'https://randomuser.me/api/portraits/women/88.jpg',
+    studentId: '37384587233',
+    name: 'Sophia Wilson',
     class: 'IX',
-    section: 'C',
-    roll: '15'
+    section: 'B',
+    roll: '17'
   },
   {
     id: 7,
-    picture: 'https://randomuser.me/api/portraits/women/65.jpg',
-    studentId: 'S104',
-    name: 'Emily Davis',
+    picture: 'https://randomuser.me/api/portraits/men/92.jpg',
+    studentId: '37384587234',
+    name: 'James Anderson',
     class: 'IX',
     section: 'C',
-    roll: '15'
+    roll: '18'
   },
   {
     id: 8,
-    picture: 'https://randomuser.me/api/portraits/women/65.jpg',
-    studentId: 'S104',
-    name: 'Emily Davis',
+    picture: 'https://randomuser.me/api/portraits/women/52.jpg',
+    studentId: '37384587235',
+    name: 'Olivia Martinez',
     class: 'IX',
-    section: 'C',
-    roll: '15'
+    section: 'A',
+    roll: '19'
   },
   {
     id: 9,
-    picture: 'https://randomuser.me/api/portraits/women/65.jpg',
-    studentId: 'S104',
-    name: 'Emily Davis',
+    picture: 'https://randomuser.me/api/portraits/men/49.jpg',
+    studentId: '37384587236',
+    name: 'Liam Taylor',
     class: 'IX',
-    section: 'C',
-    roll: '15'
+    section: 'B',
+    roll: '20'
   },
   {
     id: 10,
-    picture: 'https://randomuser.me/api/portraits/women/65.jpg',
-    studentId: 'S104',
-    name: 'Emily Davis',
+    picture: 'https://randomuser.me/api/portraits/women/60.jpg',
+    studentId: '37384587237',
+    name: 'Isabella Thomas',
     class: 'IX',
     section: 'C',
-    roll: '15'
+    roll: '21'
   },
 ];
 
-const itemsPerPage = 10;
+const itemsPerPage = 8;
 
 function StudentInformation() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -121,12 +121,11 @@ function StudentInformation() {
   );
 
   return (
-    <div className="pl-8 pr-8 pb-6 mt-0">
-      <h3 className="text-lg font-semibold mb-6">Student Directory</h3>
+    <div className="pr-8 pb-6 mt-0">
+      <h3 className="text-[31px] font-semibold mb-6">Student Directory</h3>
       
-      <div className="w-full bg-white mr-4 pb-4 mt-0 shadow-sm rounded-lg">
-        <div className="flex flex-wrap gap-6 justify-between">
-          {/* First Input */}
+      <div className="w-full bg-white mr-4 pb-2 mt-0 shadow-sm rounded-lg">
+        <div className="flex flex-wrap gap-14">
           <input 
             className="px-5 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full md:max-w-[384px]" 
             type="text" 
@@ -134,63 +133,54 @@ function StudentInformation() {
             placeholder="Search by Student Name or Student ID" 
           />
           
-          {/* Dropdown Select Options */}
-          <div className="relative w-full md:w-[152px]">
+          <div className="relative w-full md:w-[170px]">
             <select 
-              className="appearance-none px-4 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full pr-10"
+              className="appearance-none px-4 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full"
             >
               <option value="">Select Class</option>
-              <option value="1">Class 1</option>
-              <option value="2">Class 2</option>
-              <option value="3">Class 3</option>
-              {/* Add more options as needed */}
+              {/* Add options */}
             </select>
             <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
           </div>
           
-          <div className="relative w-full md:w-[152px]">
+          <div className="relative w-full md:w-[170px]">
             <select 
-              className="appearance-none px-4 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full pr-10"
+              className="appearance-none px-6 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full pr-10"
             >
               <option value="">Select Section</option>
-              <option value="A">Section A</option>
-              <option value="B">Section B</option>
-              <option value="C">Section C</option>
-              {/* Add more options as needed */}
+              {/* Add options */}
             </select>
             <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
           </div>
           
-          <div className="relative w-full md:w-[152px]">
+          <div className="relative w-full md:w-[170px]">
             <select 
               className="appearance-none px-4 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full pr-10"
             >
               <option value="">Select Subject</option>
-              <option value="Bangla">Bangla</option>
-              <option value="English">English</option>
-              <option value="Math">Math</option>
-              {/* Add more options as needed */}
+              {/* Add options */}
             </select>
             <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
           </div>
           
-          {/* Last Input with Search Button */}
           <button 
             className="px-5 py-2 bg-[#BB5042] text-white rounded-md w-full md:w-auto"
           >
             Search
           </button>
           
+        </div>
+        <div className='mt-5'>
           <span className="font-semibold text-[17px]">Total Number of Students: 535</span>
         </div>
+       
       </div>
 
-      {/* Student Table */}
-      <div className="w-full bg-white p-1 shadow-sm rounded-lg">
+      <div className="w-full text-center bg-white shadow-sm rounded-[8px]">
         <div className="overflow-x-auto">
-          <table className="min-w-full table-auto">
-            <thead className="bg-[#E8E8E8]">
-              <tr className="text-left text-sm  text-[#465049]">
+          <table className="min-w-full table-auto text-center">
+            <thead className="bg-[#E8E8E8] rounded-lg text-center">
+              <tr className="text-[#465049] text-center">
                 <th className="px-4 py-2">SL</th>
                 <th className="px-4 py-2">Picture</th>
                 <th className="px-4 py-2">Student ID</th>
@@ -203,54 +193,53 @@ function StudentInformation() {
             <tbody>
               {displayedStudents.map((student, index) => (
                 <tr key={student.id} className="border-b text-sm text-gray-700">
-                  <td className="px-4 py-2">{(currentPage - 1) * itemsPerPage + index + 1}</td>
-                  <td className="px-4 py-2">
+                  <td className="px-4 py-2 text-center">{(currentPage - 1) * itemsPerPage + index + 1}</td>
+                  <td className="px-4 py-2 flex justify-center">
                     <img
                       src={student.picture}
                       alt={student.name}
                       className="w-10 h-10 rounded-full"
                     />
                   </td>
-                  <td className="px-4 py-2">{student.studentId}</td>
-                  <td className="px-4 py-2">
+                  <td className="px-4 py-2 text-center">{student.studentId}</td>
+                  <td className="px-4 py-2 text-center">
                     <a className='text-[#0318CF] hover:text-[#BB5042]' href='http://localhost:5173/teacher/dashboard/student-dir'>{student.name}</a>
-                   </td>
-                  <td className="px-4 py-2">{student.class}</td>
-                  <td className="px-4 py-2">{student.section}</td>
-                  <td className="px-4 py-2">{student.roll}</td>
+                  </td>
+                  <td className="px-4 py-2 text-center">{student.class}</td>
+                  <td className="px-4 py-2 text-center">{student.section}</td>
+                  <td className="px-4 py-2 text-center">{student.roll}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        {/* Pagination */}
         <div className="flex justify-end mt-4">
           <div className="flex items-center space-x-2">
             <button 
               onClick={handlePrevPage} 
-              className="px-4 py-2 bg-transparent border-[#BB5042] border-[1px] text-gray-700 rounded-md"
+              className={`w-10 h-10 flex items-center justify-center bg-transparent border-[#BB5042] border-[1px] rounded text-[#BB5042] hover:bg-[#BB5042] hover:text-white ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
               disabled={currentPage === 1}
             >
-              <MdKeyboardArrowLeft className='w-[12px] h-6'/>
+              <MdKeyboardArrowLeft className="text-xl" />
             </button>
-
-            {[...Array(totalPages)].map((_, i) => (
+            
+            {[...Array(totalPages)].map((_, index) => (
               <button
-                key={i + 1}
-                onClick={() => handlePageClick(i + 1)}
-                className={`px-4 py-2 ${currentPage === i + 1 ? 'bg-[#BB5042] text-white' : 'bg-transparent border-[#BB5042] border-[1px] text-gray-700'} rounded-md`}
+                key={index}
+                onClick={() => handlePageClick(index + 1)}
+                className={`w-10 h-10 flex items-center justify-center border-[1px] border-[#BB5042] rounded ${currentPage === index + 1 ? 'bg-[#BB5042] text-white' : 'bg-transparent text-[#BB5042] hover:bg-[#BB5042] hover:text-white'}`}
               >
-                {i + 1}
+                {index + 1}
               </button>
             ))}
-
+            
             <button 
               onClick={handleNextPage} 
-              className="px-4 py-2 bg-transparent border-[#BB5042] border-[1px] text-gray-700 rounded-md"
+              className={`w-10 h-10 flex items-center justify-center bg-transparent border-[#BB5042] border-[1px] rounded text-[#BB5042] hover:bg-[#BB5042] hover:text-white ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
               disabled={currentPage === totalPages}
             >
-              <MdKeyboardArrowRight className='w-[12px] h-6'/>
+              <MdKeyboardArrowRight className="text-xl" />
             </button>
           </div>
         </div>

@@ -13,11 +13,11 @@ import teacher from '../../assets/Teacher/teacher.jpg'
 const TeacherProfile = () => {
   return (
     <div className='fixed'>
-        <h3 className='pl-5 font-semibold text-[25px]'>Profile</h3>
-         <div className="w-[1094px]  flex items-center justify-center bg-gray-50 py-5">
-      <div className=" w-[1094px] h-[566px] bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row gap-6">
+        <h3 className=' font-semibold text-[31px]'>Profile</h3>
+         <div className="w-[1094px] mt-5  flex items-center justify-center">
+      <div className=" w-[1094px] h-[566px] pt-2 bg-white rounded-lg  flex flex-col md:flex-row gap-6">
         {/* Profile Image and Name */}
-        <div className="flex flex-col  items-center md:items-start w-full md:w-1/3 bg-red-50 p-4">
+        <div className="flex flex-col  items-center md:items-start  w-[238px]">
         <div className='w-[220px] h-[250px]'>
         <img
             src={teacher} // Replace with your image path
@@ -32,44 +32,44 @@ const TeacherProfile = () => {
         </div>
 
         {/* Profile Information */}
-        <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
+        <div className="w-[855px] md:w-2/3 grid border-[1px] p-6 grid-cols-1 md:grid-cols-2 gap-4">
+          <div className=' border-b-[1px] gap-1'>
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span className='pt-1'><MdMenuBook className='h-5 w-5 text-[#BB5042]'/></span>
                 Subject Name</h3>
             <p className="text-gray-800 mt-3">Math</p>
           </div>
-          <div>
+          <div className=' border-b-[1px]'>
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span className='pt-1'><LiaChalkboardTeacherSolid className='h-5 w-5 text-[#BB5042]'/></span>
                 Assigned Class</h3>
             <p className="text-gray-800 mt-3">IX</p>
           </div>
-          <div>
+          <div className=' border-b-[1px] gap-1'>
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span className='pt-1'><BsCalendarDate className='h-5 w-5 text-[#BB5042]'/></span>
                 Joining Date</h3>
             <p className="text-gray-800 mt-3">1 May 2009</p>
           </div>
-          <div>
+          <div className=' border-b-[1px] gap-1'>
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span className='pt-1'><MdOutlineBloodtype className='h-5 w-5 text-[#BB5042]'/></span>
                 Blood Group</h3>
             <p className="text-gray-800 mt-3">O+</p>
           </div>
-          <div>
+          <div className=' border-b-[1px] gap-1'>
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span className='pt-1'><CiMobile2 className='h-5 w-5 text-[#BB5042]'/></span>
                 Mobile Number</h3>
             <p className="text-gray-800 mt-3">01400000000</p>
           </div>
-          <div>
+          <div className=' border-b-[1px] gap-1'>
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span className='pt-1'><TfiEmail className='h-5 w-5 text-[#BB5042]'/></span>
                 Email</h3>
             <p className="text-gray-800 mt-3">kamrul@gmail.com</p>
           </div>
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-2  border-b-[1px] gap-1">
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span className='pt-1'><CiLocationOn className='h-5 w-5 text-[#BB5042]'/></span>
                 Address</h3>

@@ -45,7 +45,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             <img className="w-full h-full" src={logo} alt="Logo" />
           </Link>
         </div>
-        <div className="px-[16px] mt-8">
+        <div className="px-[16px] mt-2">
           <ul>
             {menuItems.map((item, index) => (
               <li key={index}>

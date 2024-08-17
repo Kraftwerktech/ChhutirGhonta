@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { CiCalendar } from "react-icons/ci";
+import { CiCalendar } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 
+// Dummy Data
 const students = [
   {
     id: 1,
@@ -96,10 +96,7 @@ const students = [
     ],
   },
 
-  //... (other student data)
 ];
-
-const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const StudentInformation = () => {
   const [selectedDate, setSelectedDate] = useState(students[0].date);
@@ -109,23 +106,23 @@ const StudentInformation = () => {
   };
 
   return (
-    <div className="pl-8 pr-8 pb-8 mt-1">
-      <h3 className="text-lg font-bold text-[26px] text-[#151515] mb-6 ml-2">My Routine</h3>
+    <div className="mt-2">
+      <h3 className="text-2xl font-bold text-gray-900 mb-8">My Routine</h3>
 
       {/* Routine Table */}
-      <div className="w-full bg-white p-1 shadow-sm rounded-lg">
+      <div className="w-full bg-white p-4 shadow-sm rounded-lg">
         <div className="overflow-x-auto">
-          <table className="min-w-full h-auto table-auto">
-            <thead className=" bg-transparent mt-2">
-              <tr className="text-center text-sm text-[#465049]">
+          <table className="min-w-full table-auto">
+            <thead className="bg-transparent">
+              <tr className="text-center text-sm text-gray-700">
                 <th className="px-4 py-2">
-                  <Link to="http://localhost:5173/teacher/dashboard/routineCalender" className='w-16 h-16'>
-                    <CiCalendar className="w-16 h-16 text-[#BB5042] ml-[85px]" />
+                  <Link to="/teacher/dashboard/routineCalender">
+                    <CiCalendar className="w-[100px] h-[60px] text-[#BB5042] pl-10 items-end justify-end mx-auto" />
                   </Link>
                 </th>
                 {['1st', '2nd', '3rd', '4th', '5th', '6th'].map((period, index) => (
                   <th key={index} className="px-4 py-2">
-                    <span className="text-[25px]">{period}</span>
+                    <span className="text-lg">{period}</span>
                     <p className="text-gray-400">
                       {index + 10}:00 am<br />
                       {index + 10}:45 am
@@ -138,23 +135,23 @@ const StudentInformation = () => {
               {students.map((student) => (
                 <tr
                   key={student.id}
-                  className={`text-center ${selectedDate === student.date ? 'bg-[#F3F3F3] text-black' : 'bg-white text-gray-500 opacity-50'}`}
+                  className={`text-center ${selectedDate === student.date ? 'bg-[#F3F3F3] text-black' : 'bg-white text-gray-500'}`}
                   onClick={() => handleDateSelect(student.date)}
                 >
-                  <td className="px-4 border-b-[1px] py-2">
-                    <div className="cursor-pointer flex items-center justify-center gap-[30px]">
+                  <td className="px-4 border-b py-2">
+                    <div className="flex items-center justify-center gap-4 cursor-pointer">
                       <p>{student.day}</p>
-                      <p
-                        className={`w-[68px] h-[68px] rounded-full border-[1px] text-[24px] font-bold flex items-center justify-center ${selectedDate === student.date ? 'bg-[#465049] text-white' : 'bg-white text-black'}`}
-                      >
+                      <p className={`w-16 h-16 rounded-full border text-xl font-bold flex items-center justify-center ${selectedDate === student.date ? 'bg-[#465049] text-white' : 'bg-white text-black'}`}>
                         {student.date.split('-')[2]}
                       </p>
                     </div>
                   </td>
                   {student.schedule.map((period, index) => (
-                    <td key={index} className="px-10 border-b-[1px] py-2">
-                      <div className={`font-bold ${selectedDate === student.date ? 'text-[#BB5042]' : 'text-gray-500'}`}>{period.subject}</div>
-                      <p className="text-xs text-gray-500">{period.className}</p>
+                    <td key={index} className="px-4 border-b py-2">
+                      <div className={`font-bold ${selectedDate === student.date ? 'text-[#BB5042]' : 'text-gray-500 opacity-70'}`}>
+                        {period.subject}
+                      </div>
+                      <p className={`text-xs ${selectedDate === student.date ? 'text-gray-500' : 'text-gray-400 opacity-70'}`}>{period.className}</p>
                     </td>
                   ))}
                 </tr>
@@ -165,15 +162,15 @@ const StudentInformation = () => {
                   <td className="px-4 py-2">
                     <div className="flex flex-col items-center justify-center gap-2">
                       <p>-</p>
-                      <p className="w-[68px] h-[68px] rounded-full border-[1px] flex items-center justify-center bg-white text-black">
+                      <p className="w-16 h-16 rounded-full border flex items-center justify-center bg-white text-black opacity-50">
                         -
                       </p>
                     </div>
                   </td>
                   {Array(6).fill().map((_, j) => (
                     <td key={j} className="px-4 py-2">
-                      <div className="font-bold text-[#BB5042]">-</div>
-                      <p className="text-xs text-gray-500">-</p>
+                      <div className="font-bold text-[#BB5042] opacity-50">-</div>
+                      <p className="text-xs text-gray-400 opacity-50">-</p>
                     </td>
                   ))}
                 </tr>
