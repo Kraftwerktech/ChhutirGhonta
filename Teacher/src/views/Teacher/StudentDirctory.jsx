@@ -184,7 +184,7 @@ const StudentDirectory = () => {
             <h3>Medical Information</h3>
           </div>
           <div className='bg-[#F6F9F7] p-4 '>
-            <table className="min-w-full table-auto">
+            <table className="min-w-full ">
               <thead className="bg-[#E4EBE6]">
                 <tr className="text-left text-sm  text-[#465049]">
                   <th className="px-4 py-2">SL</th>
@@ -198,15 +198,15 @@ const StudentDirectory = () => {
                   <td className="px-4 py-2">1</td>
                   <td className="px-4 py-2">Asthma</td>
                   <td className="px-4 py-2">Chronic condition managed by medication</td>
-                  <td className="px-4 py-2 pl-10">
+                  <td className="px-4 py-2 pl-7">
                     <BsFiletypePdf className="text-red-500 w-8 h-8 cursor-pointer" />
                   </td>
                 </tr>
-                <tr className='border-b-[1px]'>
+                <tr>
                   <td className="px-4 py-2">2</td>
                   <td className="px-4 py-2">Allergy</td>
                   <td className="px-4 py-2">Allergic to peanuts</td>
-                  <td className="px-4 py-2 pl-10">
+                  <td className="px-4 py-2 pl-7">
                     <BsFiletypePdf className="text-red-500 w-8 h-8  cursor-pointer" />
                   </td>
                 </tr>

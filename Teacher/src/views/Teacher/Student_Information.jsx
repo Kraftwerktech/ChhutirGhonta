@@ -124,7 +124,7 @@ function StudentInformation() {
     <div className="pr-8 pb-6 mt-0">
       <h3 className="text-[31px] font-semibold mb-6">Student Directory</h3>
       
-      <div className="w-full bg-white mr-4 pb-2 mt-0 shadow-sm rounded-lg">
+      <div className="w-full bg-white mr-4 pb-2 mt-0">
         <div className="flex flex-wrap gap-14">
           <input 
             className="px-5 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full md:max-w-[384px]" 

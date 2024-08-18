@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const ResetPasswordCard = () => {
   return (
     <div>
-      <h3 className=" mt-5 font-bold text-[24px]">Verify Your Identity</h3>
+      <h3 className=" mt-5 font-bold text-[31px]">Verify Your Identity</h3>
       <div className="mt-0 flex justify-center items-center">
-      <div className="bg-white  p-6 max-w-md w-full">
-        <h4 className=" mb-10 text-gray-600">
+      <div className="bg-white border-[1px]  p-20 w-[600px] h-[480px]">
+        <h4 className=" mb-10 text-[16px] text-center text-gray-600">
           Please select the email address or mobile number associated with your account to receive an OTP.
         </h4>
         <span className="block text-gray-700 font-medium mb-3">Choose your preferred platform</span>
