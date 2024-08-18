@@ -14,7 +14,7 @@ const ResetPasswordCard = () => {
   const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
 
   return (
-    <div className="mt-5">
+    <div>
       <h3 className="font-bold text-[31px]">Change Password</h3>
       <div className="flex items-center mt-5 mb-10 justify-center bg-gray-50">
         <div className="w-[650px] h-[425px] p-20 bg-white rounded-md border-[1px]">

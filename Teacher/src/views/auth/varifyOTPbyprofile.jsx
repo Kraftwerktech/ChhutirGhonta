@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ResetPasswordCard = () => {
     return (
         <div>
-            <h3 className="mt-5 font-bold text-[31px]">Verify Your Identity</h3>
+            <h3 className=" font-bold text-[31px]">Verify Your Identity</h3>
             <div className="mt-0 flex justify-center items-center">
                 <div className="bg-white border-[1px] rounded-md  p-20 w-[600px] h-[480px]">
                     <h4 className="text-gray-600 mb-10 text-center">

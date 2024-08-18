@@ -106,11 +106,11 @@ const StudentInformation = () => {
   };
 
   return (
-    <div className="mt-2">
-      <h3 className="text-2xl font-bold text-gray-900 mb-8">My Routine</h3>
+    <div>
+      <h3 className="text-[31px] font-bold text-gray-900 mb-8">My Routine</h3>
 
       {/* Routine Table */}
-      <div className="w-full bg-white p-4 shadow-sm rounded-lg">
+      <div className="w-full bg-white shadow-sm rounded-lg">
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
             <thead className="bg-transparent">
@@ -123,7 +123,7 @@ const StudentInformation = () => {
                 {['1st', '2nd', '3rd', '4th', '5th', '6th'].map((period, index) => (
                   <th key={index} className="px-4 py-2">
                     <span className="text-lg">{period}</span>
-                    <p className="text-gray-400">
+                    <p className="text-gray-400 mt-[10px] mb-[5px]">
                       {index + 10}:00 am<br />
                       {index + 10}:45 am
                     </p>
@@ -135,11 +135,11 @@ const StudentInformation = () => {
               {students.map((student) => (
                 <tr
                   key={student.id}
-                  className={`text-center ${selectedDate === student.date ? 'bg-[#F3F3F3] text-black' : 'bg-white text-gray-500'}`}
+                  className={`text-center ${selectedDate === student.date ? ' bg-transparent text-black' : ' bg-transparent text-gray-500'}`}
                   onClick={() => handleDateSelect(student.date)}
                 >
-                  <td className="px-4 border-b py-2">
-                    <div className="flex items-center justify-center gap-4 cursor-pointer">
+                  <td className="px-2 w-[175px] py-2">
+                    <div className="flex items-center justify-center gap-6 cursor-pointer">
                       <p>{student.day}</p>
                       <p className={`w-16 h-16 rounded-full border text-xl font-bold flex items-center justify-center ${selectedDate === student.date ? 'bg-[#465049] text-white' : 'bg-white text-black'}`}>
                         {student.date.split('-')[2]}
@@ -148,10 +148,10 @@ const StudentInformation = () => {
                   </td>
                   {student.schedule.map((period, index) => (
                     <td key={index} className="px-4 border-b py-2">
-                      <div className={`font-bold ${selectedDate === student.date ? 'text-[#BB5042]' : 'text-gray-500 opacity-70'}`}>
+                      <div className={`font-bold ${selectedDate === student.date ? 'text-[#BB5042]' : 'text-[#BB5042] opacity-50'}`}>
                         {period.subject}
                       </div>
-                      <p className={`text-xs ${selectedDate === student.date ? 'text-gray-500' : 'text-gray-400 opacity-70'}`}>{period.className}</p>
+                      <p className={`text-xs mt-[10px] ${selectedDate === student.date ? 'text-gray-500' : 'text-gray-400 opacity-70'}`}>{period.className}</p>
                     </td>
                   ))}
                 </tr>
