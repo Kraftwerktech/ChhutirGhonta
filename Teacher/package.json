@@ -15,7 +15,7 @@
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/jest-dom": "^6.4.8",
     "apexcharts": "^3.52.0",
-    "axios": "^1.7.3",
+    "axios": "^1.7.4",
     "dayjs": "^1.11.12",
     "file-saver": "^2.0.5",
     "jwt-decode": "^4.0.0",
@@ -29,6 +29,7 @@
     "react-router-dom": "^6.26.0",
     "react-scripts": "^5.0.1",
     "react-spinners": "^0.14.1",
+    "react-toastify": "^10.0.5",
     "react-window": "^1.8.10"
   },
   "devDependencies": {

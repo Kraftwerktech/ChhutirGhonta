@@ -5,7 +5,7 @@ import Sidebar from './Sidebar'
 const MainLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false)
   return (
-    <div className='bg-[#FFFF] w-full min-h-screen'>
+    <div className=' bg-transparent w-full min-h-screen'>
       <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       
       

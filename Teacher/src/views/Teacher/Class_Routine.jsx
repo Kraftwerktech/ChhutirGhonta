@@ -110,7 +110,7 @@ const StudentInformation = () => {
       <h3 className="text-[31px] font-bold text-gray-900 mb-8">My Routine</h3>
 
       {/* Routine Table */}
-      <div className="w-full bg-white shadow-sm rounded-lg">
+      <div className="w-full">
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
             <thead className="bg-transparent">
@@ -122,8 +122,8 @@ const StudentInformation = () => {
                 </th>
                 {['1st', '2nd', '3rd', '4th', '5th', '6th'].map((period, index) => (
                   <th key={index} className="px-4 py-2">
-                    <span className="text-lg">{period}</span>
-                    <p className="text-gray-400 mt-[10px] mb-[5px]">
+                    <span className="text-[25px]">{period}</span>
+                    <p className="text-gray-600 text-[16px] mt-[10px] mb-[5px]">
                       {index + 10}:00 am<br />
                       {index + 10}:45 am
                     </p>
@@ -148,10 +148,10 @@ const StudentInformation = () => {
                   </td>
                   {student.schedule.map((period, index) => (
                     <td key={index} className="px-4 border-b py-2">
-                      <div className={`font-bold ${selectedDate === student.date ? 'text-[#BB5042]' : 'text-[#BB5042] opacity-50'}`}>
+                      <div className={`font-bold text-[18px] ${selectedDate === student.date ? 'text-[#BB5042]' : 'text-[#BB5042] opacity-50'}`}>
                         {period.subject}
                       </div>
-                      <p className={`text-xs mt-[10px] ${selectedDate === student.date ? 'text-gray-500' : 'text-gray-400 opacity-70'}`}>{period.className}</p>
+                      <p className={`text-[16px] font-semibold mt-[7px] ${selectedDate === student.date ? 'text-gray-500' : 'text-gray-400 opacity-70'}`}>{period.className}</p>
                     </td>
                   ))}
                 </tr>
