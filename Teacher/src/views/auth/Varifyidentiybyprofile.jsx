@@ -5,7 +5,7 @@ const ResetPasswordCard = () => {
   return (
     <div>
       <h3 className=" font-bold text-[31px]">Verify Your Identity</h3>
-      <div className="mt-0 flex justify-center items-center">
+      <div className="flex items-center mt-5 mb-10 justify-center">
       <div className="bg-white border-[1px]  p-20 w-[600px] h-[480px]">
         <h4 className=" mb-10 text-[16px] text-center text-gray-600">
           Please select the email address or mobile number associated with your account to receive an OTP.
