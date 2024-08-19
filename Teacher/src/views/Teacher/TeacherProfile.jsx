@@ -32,7 +32,7 @@ const TeacherProfile = () => {
         </div>
 
         {/* Profile Information */}
-        <div className="w-[855px] md:w-2/3 grid border-[1px] p-6 grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="w-[855px] md:w-2/3 grid border-[1px] rounded-md p-6 grid-cols-1 md:grid-cols-2 gap-4">
           <div className=' border-b-[1px] gap-1'>
             <h3 className="text-gray-600 font-medium flex gap-2">
             <span><MdMenuBook className='h-6 w-6 text-[#BB5042]'/></span>

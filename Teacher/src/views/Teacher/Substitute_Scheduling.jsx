@@ -38,7 +38,7 @@ function SubstituteScheduling() {
     <div className="pb-8 mt-1">
       <h3 className="text-[31px] font-semibold mb-6">Substitute Scheduling</h3>
 
-      <div className="w-full bg-white pb-0 shadow-sm rounded-lg mb-0">
+      <div className="w-full bg-transparent pb-0  mb-0">
         <div className="flex flex-wrap gap-4 md:gap-6 mb-3">
           {/* Date Select */}
           <div className="relative w-full md:w-[152px]">
@@ -71,7 +71,7 @@ function SubstituteScheduling() {
               <option value="B">Section B</option>
               <option value="C">Section C</option>
             </select>
-            <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
+            <MdExpandMore className="absolute text-[#BB5042] right-3 top-[40%] transform -translate-y-1/2 pointer-events-none" />
           </div>
 
           {/* Section Select */}
@@ -82,7 +82,7 @@ function SubstituteScheduling() {
               <option value="English">English</option>
               <option value="Math">Math</option>
             </select>
-            <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
+            <MdExpandMore className="absolute text-[#BB5042] right-3 top-[40%] transform -translate-y-1/2 pointer-events-none" />
           </div>
 
           {/* Search Button */}
@@ -96,10 +96,10 @@ function SubstituteScheduling() {
       </div>
 
       {/* Student Table */}
-      <div className="w-full bg-white shadow-sm rounded-lg">
+      <div className="w-full bg-white  rounded-md">
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
-            <thead className="bg-[#E8E8E8]">
+            <thead className="bg-[#E4EBE6]">
               <tr className="text-center text-sm text-[#465049]">
                 <th className="px-4 py-2">SL</th>
                 <th className="px-4 py-2">Date</th>

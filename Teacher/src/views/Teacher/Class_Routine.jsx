@@ -95,7 +95,6 @@ const students = [
       { subject: 'Biology', className: 'IX-A' },
     ],
   },
-
 ];
 
 const StudentInformation = () => {
@@ -114,11 +113,13 @@ const StudentInformation = () => {
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
             <thead className="bg-transparent">
-              <tr className="text-center text-sm text-gray-700">
+              <tr className="text-center pl-10 text-sm text-gray-700">
                 <th className="px-4 py-2">
-                  <Link to="/teacher/dashboard/routineCalender">
-                    <CiCalendar className="w-[100px] h-[60px] text-[#BB5042] pl-10 items-end justify-end mx-auto" />
-                  </Link>
+                  <div className="flex pl-11 justify-center">
+                    <Link to="/teacher/dashboard/routineCalender">
+                      <CiCalendar className="w-[70px] h-[70px] text-[#BB5042]" />
+                    </Link>
+                  </div>
                 </th>
                 {['1st', '2nd', '3rd', '4th', '5th', '6th'].map((period, index) => (
                   <th key={index} className="px-4 py-2">
@@ -135,7 +136,7 @@ const StudentInformation = () => {
               {students.map((student) => (
                 <tr
                   key={student.id}
-                  className={`text-center ${selectedDate === student.date ? ' bg-transparent text-black' : ' bg-transparent text-gray-500'}`}
+                  className={`text-center ${selectedDate === student.date ? 'bg-transparent text-black' : 'bg-transparent text-gray-500'}`}
                   onClick={() => handleDateSelect(student.date)}
                 >
                   <td className="px-2 w-[175px] py-2">

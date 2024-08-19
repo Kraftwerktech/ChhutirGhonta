@@ -48,88 +48,88 @@ const StudentDirectory = () => {
           {/* Profile Information */}
           <div className="flex-1 grid grid-cols-1 md:grid-cols-2 border-[1px] p-8 gap-4 rounded-[8px] mb-5">
             <div className="col-span-1 md:col-span-2 pb-2 border-b-[1px]">
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <PiStudentDuotone className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 text-[16px] mb-3 font-medium flex gap-2">
+                <PiStudentDuotone className='h-6 w-6 text-[#BB5042]' />
                 Student ID
               </h3>
-              <p className="text-gray-800 mt-2">2322343513</p>
+              <span className="text-[#939393] text-[16px]">45983290420055</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <BsCalendarDate className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 mb-3 text-[16px] font-medium flex gap-2">
+                <BsCalendarDate className='h-6 w-6 text-[#BB5042]' />
                 Date of Birth
               </h3>
-              <p className="text-gray-800 mt-2">1 May 2009</p>
+              <span className="text-[#939393] text-[16px]">20 Sep 2002</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <TbFileCertificate className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 text-[16px] mb-3 font-medium flex gap-2">
+                <TbFileCertificate className='h-6 w-6 text-[#BB5042]' />
                 Birth Certificate Number
               </h3>
-              <p className="text-gray-800 mt-2">3438459493738</p>
+              <span className="text-[#939393] text-[16px]">4848 7474 8887</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <PiMosqueThin className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 text-[16px] mb-3 font-medium flex gap-2">
+                <PiMosqueThin className='h-6 w-6 text-[#BB5042]' />
                 Religion
               </h3>
-              <p className="text-gray-800 mt-2">Islam</p>
+              <span className="text-[#939393] text-[16px]">Islam</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <MdOutlineBloodtype className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 mb-3 text-[16px] font-medium flex gap-2">
+                <MdOutlineBloodtype className='h-6 w-6 text-[#BB5042]' />
                 Blood Group
               </h3>
-              <p className="text-gray-800 mt-2">A+</p>
+              <span className="text-[#939393]  text-[16px]">A+</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <GoPerson className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 text-[16px] font-medium mb-3 flex gap-2">
+                <GoPerson className='h-6 w-6 text-[#BB5042]' />
                 Father's Name
               </h3>
-              <p className="text-gray-800 mt-2">Mr. Islam</p>
+              <span className="text-[#939393] text-[16px] ">Md. Rhamna</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <GoPerson className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 text-[16px] mb-3 font-medium flex gap-2">
+                <GoPerson className='h-6 w-6 text-[#BB5042]' />
                 Mother's Name
               </h3>
-              <p className="text-gray-800 mt-2">Mrs. Islam</p>
+              <span className="text-[#939393] text-[16px] ">Mrs. Aysha</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <CiMobile2 className='h-5 w-5 text-[#BB5042]' />
+              <h3 className="text-gray-600 mb-3 font-medium flex gap-2">
+                <CiMobile2 className='h-6 w-6 text-[#BB5042]' />
                 Father's Mobile Number
               </h3>
-              <p className="text-gray-800 mt-2">01846738532</p>
+              <span className="text-[#939393] text-[16px]">01753746826</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
+              <h3 className="text-gray-600 mb-3 font-medium flex gap-2">
                 <CiMobile2 className='h-5 w-5 text-[#BB5042]' />
                 Mother's Mobile Number
               </h3>
-              <p className="text-gray-800 mt-2">017356467383</p>
+              <span className="text-[#939393] text-[16px]">01553746829</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
+              <h3 className="text-gray-600 font-medium mb-3 flex gap-2">
                 <FaRegAddressCard className='h-5 w-5 text-[#BB5042]' />
-                Father’s NID Number
+                <span>Father’s NID Number</span>
               </h3>
-              <p className="text-gray-800 mt-2">74839973427292</p>
+              <span className="text-[#939393] text-[16px]">47483290420089</span>
             </div>
             <div className='border-b-[1px] gap-1 p-2'>
-              <h3 className="text-gray-600 font-medium flex gap-2">
-                <FaRegAddressCard className='h-5 w-5 text-[#BB5042]' />
-                Mother's NID Number
+              <h3 className="text-gray-600 font-medium mb-3 flex gap-2">
+                <FaRegAddressCard className='h-6 w-6 text-[#BB5042]' />
+                <span className='text-[16px]'>Mother's NID Number</span>
               </h3>
-              <p className="text-gray-800 mt-2">45983290420055</p>
+              <span className="text-[#939393] text-[16px] mt-3">47483290420080</span>
             </div>
             <div className="col-span-1 md:col-span-2 p-2">
               <h3 className="text-gray-600 font-medium flex gap-2">
-                <CiLocationOn className='h-5 w-5 text-[#BB5042]' />
+                <CiLocationOn className='h-6 w-6 text-[#BB5042]' />
                 Address
               </h3>
-              <p className="text-gray-800 mt-2">House # 20, Flat-5 D, Road # 11, Banani, Dhaka</p>
+              <p className="text-[#939393] mt-3 text-[16px]">House # 20, Flat-5 D, Road # 11, Banani, Dhaka</p>
             </div>
           </div>
         </div>

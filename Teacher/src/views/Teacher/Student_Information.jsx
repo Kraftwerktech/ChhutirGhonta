@@ -125,7 +125,7 @@ function StudentInformation() {
       <h3 className="text-[31px] font-semibold mb-6">Student Directory</h3>
       
       <div className="w-full bg-white mr-4 pb-2 mt-0">
-        <div className="flex flex-wrap gap-14">
+        <div className="flex  gap-14">
           <input 
             className="px-5 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full md:max-w-[384px]" 
             type="text" 
@@ -138,7 +138,10 @@ function StudentInformation() {
               className="appearance-none px-4 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full"
             >
               <option value="">Select Class</option>
-              {/* Add options */}
+              <option>Class-ix</option>
+              <option>Class-x</option>
+              <option>Class-xi</option>
+              <option>Class-xii</option>
             </select>
             <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
           </div>
@@ -148,7 +151,10 @@ function StudentInformation() {
               className="appearance-none px-6 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full pr-10"
             >
               <option value="">Select Section</option>
-              {/* Add options */}
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
             </select>
             <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
           </div>
@@ -158,7 +164,10 @@ function StudentInformation() {
               className="appearance-none px-4 py-2 outline-none border bg-transparent border-slate-300 rounded-md text-gray-700 focus:border-[#BB5042] w-full pr-10"
             >
               <option value="">Select Subject</option>
-              {/* Add options */}
+              <option>Bangla</option>
+              <option>English</option>
+              <option>Math</option>
+              <option>Biology</option>
             </select>
             <MdExpandMore className="absolute text-[#BB5042] right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
           </div>
@@ -179,7 +188,7 @@ function StudentInformation() {
       <div className="w-full text-center bg-white shadow-sm rounded-[8px]">
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto text-center">
-            <thead className="bg-[#E8E8E8] rounded-lg text-center">
+            <thead className="bg-[#E4EBE6] rounded-lg text-center">
               <tr className="text-[#465049] text-center">
                 <th className="px-4 py-2">SL</th>
                 <th className="px-4 py-2">Picture</th>
