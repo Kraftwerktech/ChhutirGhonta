@@ -6,11 +6,11 @@ const { createToken } = require('../../Utils/tokenCreate');
 class AuthControllers {
     // Teacher login handler
     teacherLogin = async (req, res) => {
-        const { email, password } = req.body;
+        const { username, password } = req.body;
 
         try {
             // Find teacher by email and select the password field explicitly
-            const teacher = await TeacherModel.findOne({ email }).select('+password');
+            const teacher = await TeacherModel.findOne({ username }).select('+password');
             
             if (!teacher) {
                 return responseReturn(res, 404, { error: "Email not found" });

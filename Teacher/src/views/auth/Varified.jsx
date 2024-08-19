@@ -35,11 +35,12 @@ function Teacherlogin() {
 
                         <img src={teacherImage} alt="Teacher Illustration" className="w-[523px] h-[464px] mt-6" />
                     </div>
+<div className='ml-[200px]'>
 
-                    <div className="bg-white rounded-l-[56px] gap-4  items-center shadow-lg ml-[60px] mt-20 p-20 flex flex-col justify-center ">
+<div className="bg-white  h-[746px] max-w-full rounded-l-[56px] gap-4  items-center  mt-20 p-20 flex flex-col justify-center ">
                         <div className='w-[446px] h-[115px] items-center mb-10 justify-center text-center'>
-                            <h2 className="text-[39px] text-gray-700 mb-[24px] mt-20 font-bold">OTP Verification</h2>
-                            <span >Please enter the OTP sent to your email/mobile. If you don”t see it, check your spam folder.</span>
+                            <h2 className="text-[39px] text-[#151515] mb-[24px] mt-20 font-bold">OTP Verification</h2>
+                            <span className='text-[#465049] text-[18px]'>Please enter the OTP sent to your email/mobile. If you don”t see it, check your spam folder.</span>
                         </div>
                         <div className="flex space-x-4 mt-[100px] mb-4">
                             {otp.map((data, index) => (
@@ -63,6 +64,8 @@ function Teacherlogin() {
 
                         </Link>
                     </div>
+</div>
+                   
                 </div>
             </div>
         </div>

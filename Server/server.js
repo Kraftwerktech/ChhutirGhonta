@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 // Set up CORS with specific origin and credentials
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: 'http://localhost:5173', // Corrected origin without trailing slash
     credentials: true
 }));
 

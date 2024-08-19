@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { PiStudentDuotone } from "react-icons/pi";
 import { FaAddressCard } from "react-icons/fa";
-import { BsFiletypePdf } from "react-icons/bs";
+import { BsFiletypePdf, BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { BsCalendarDate } from "react-icons/bs";
 import { CiMobile2, CiLocationOn } from "react-icons/ci";
 import { MdOutlineBloodtype } from "react-icons/md";
@@ -13,6 +13,10 @@ import { GoPerson } from "react-icons/go";
 import teacher from '../../assets/Teacher/student.jpeg';
 
 const StudentDirectory = () => {
+
+  const [showAcademicReport, setShowAcademicReport] = useState(true);
+  const [showMedicalInfo, setShowMedicalInfo] = useState(true);
+
   return (
     <div className="max-w-[1200px]">
       <h3 className=' font-semibold text-[25px]  mb-8'>Student Information</h3>
@@ -134,13 +138,22 @@ const StudentDirectory = () => {
       <div className='mt-3'>
         {/* Academic Report */}
         <div className='mb-8 border-[1px]'>
-          <div className='bg-[#A7BEAE] p-4 rounded-t-[8px] text-[20px] font-bold text-white'>
-            <h3>Academic Report</h3>
+          <div  className='bg-[#A7BEAE] p-4 rounded-t-[8px] justify-between flex text-[20px] font-bold text-white'>
+            <h3 className=' text-[25px]'>Academic Report</h3>
+            <div className='mr-5' onClick={() => setShowAcademicReport(!showAcademicReport)}>
+            {showAcademicReport ? (
+              <BsChevronUp className="text-white w-5 h-5" />
+            ) : (
+              <BsChevronDown className="text-white w-5 h-5" />
+            )}
+            </div>
+            
           </div>
+          {showAcademicReport && (
           <div className='bg-transparent p-4'>
             <table className="min-w-full table-auto">
               <thead className="bg-[#E4EBE6]">
-                <tr className="text-left text-sm text-[#465049]">
+                <tr className="text-left text-[16px] text-[#465049]">
                   <th className="px-4 py-2">SL</th>
                   <th className="px-4 py-2">Class</th>
                   <th className="px-4 py-2">Grade</th>
@@ -151,7 +164,7 @@ const StudentDirectory = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className='border-b-[1px]'>
+                <tr className='border-b-[1px] text-[16px]'>
                   <td className="px-4 py-2">1</td>
                   <td className="px-4 py-2">VII</td>
                   <td className="px-4 py-2">A+</td>
@@ -162,7 +175,18 @@ const StudentDirectory = () => {
                     <BsFiletypePdf className="text-red-500 w-8 h-8 cursor-pointer" />
                   </td>
                 </tr>
-                <tr>
+                <tr className='text-[16px] border-b-[1px]'>
+                  <td className="px-4 py-2">2</td>
+                  <td className="px-4 py-2">VI</td>
+                  <td className="px-4 py-2">A</td>
+                  <td className="px-4 py-2">7th</td>
+                  <td className="px-4 py-2">530/600</td>
+                  <td className="px-4 py-2">Very Good</td>
+                  <td className="px-4 py-2 pl-10">
+                    <BsFiletypePdf className="text-red-500 w-8 h-8 cursor-pointer" />
+                  </td>
+                </tr>
+                <tr className='text-[16px]'>
                   <td className="px-4 py-2">2</td>
                   <td className="px-4 py-2">VI</td>
                   <td className="px-4 py-2">A</td>
@@ -176,17 +200,27 @@ const StudentDirectory = () => {
               </tbody>
             </table>
           </div>
+           )}
         </div>
 
         {/* Medical Information */}
         <div className='mb-8 border-[1px]'>
-          <div className='bg-[#A7BEAE] rounded-t-[8px] p-4 text-[20px] font-bold text-white'>
-            <h3>Medical Information</h3>
+          <div  className='bg-[#A7BEAE] justify-between flex rounded-t-[8px] p-4 text-[20px] font-bold text-white'>
+            <h3 className=' text-[25px]'>Medical Information</h3>
+            <div onClick={() => setShowMedicalInfo(!showMedicalInfo)} className='mr-5'>
+            {showMedicalInfo ? (
+              <BsChevronUp className="text-white w-5 h-5" />
+            ) : (
+              <BsChevronDown className="text-white w-5 h-5" />
+            )}
+            </div>
+           
           </div>
+          {showMedicalInfo && (
           <div className='bg-[#F6F9F7] p-4 '>
             <table className="min-w-full ">
               <thead className="bg-[#E4EBE6]">
-                <tr className="text-left text-sm  text-[#465049]">
+                <tr className="text-left text-[16px]  text-[#465049]">
                   <th className="px-4 py-2">SL</th>
                   <th className="px-4 py-2">Name of Disease</th>
                   <th className="px-4 py-2">Descriptions</th>
@@ -194,7 +228,7 @@ const StudentDirectory = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className='border-b-[1px]'>
+                <tr className='border-b-[1px] text-[16px]'>
                   <td className="px-4 py-2">1</td>
                   <td className="px-4 py-2">Asthma</td>
                   <td className="px-4 py-2">Chronic condition managed by medication</td>
@@ -202,7 +236,15 @@ const StudentDirectory = () => {
                     <BsFiletypePdf className="text-red-500 w-8 h-8 cursor-pointer" />
                   </td>
                 </tr>
-                <tr>
+                <tr className='text-[16px] border-b-[1px]'>
+                  <td className="px-4 py-2">2</td>
+                  <td className="px-4 py-2">Allergy</td>
+                  <td className="px-4 py-2">Allergic to peanuts</td>
+                  <td className="px-4 py-2 pl-7">
+                    <BsFiletypePdf className="text-red-500 w-8 h-8  cursor-pointer" />
+                  </td>
+                </tr>
+                <tr className='text-[16px]'>
                   <td className="px-4 py-2">2</td>
                   <td className="px-4 py-2">Allergy</td>
                   <td className="px-4 py-2">Allergic to peanuts</td>
@@ -213,6 +255,7 @@ const StudentDirectory = () => {
               </tbody>
             </table>
           </div>
+              )}
         </div>
       </div>
     </div>
